@@ -26,6 +26,9 @@
     "README.md",
     "LICENSE"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs --format esm --dts --clean",
     "test": "vitest run"
