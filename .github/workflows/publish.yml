@@ -42,12 +42,14 @@ jobs:
 
       - name: Publish to NPM (Dry Run)
         if: ${{ inputs.dry_run == true }}
+        working-directory: packages/storage-client
         run: npm publish --access public --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish to NPM
         if: ${{ inputs.dry_run != true }}
+        working-directory: packages/storage-client
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
